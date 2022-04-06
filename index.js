@@ -3,8 +3,20 @@ const url = require("url");
 const fs = require("fs");
 
 http.createServer(function(req, res) {
+  //"parse" is deprecated
   const site = url.parse(req.url, true);
   const file = "." + site.pathname;
+  //run stylesheet
+  fs.readFile("style.css", function(err, data) {
+    if (err) {
+      console.warn(err);
+    } else {
+      res.writeHead(200, {"Content-Type": "text/css"});
+      res.write(data);
+      res.end();
+    }
+  })
+  //run index
   if (site.pathname == "/") {
     fs.readFile("index.html", function(err, data) {
       if (err) {
@@ -17,8 +29,10 @@ http.createServer(function(req, res) {
       }
     })
   };
+  //run everything else
   fs.readFile(file, function(err, data) {
     if (err) {
+      //run custom 404
       fs.readFile("404.html", (err, content) => {
         if (err) {
           console.warn(err);
