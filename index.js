@@ -7,12 +7,12 @@ const server = http.createServer((req, res) => {
   const file = "." + site.pathname;
   fs.readFile(file, (err, data) => {
     if (err) {
-      res.writeHead(404, {"Content Type": "text/html"});
+      res.writeHead(404, {"Content-Type": "text/html"});
       res.write(data);
       return res.end();
     }
     else {
-      res.writeHead(200, {"Content Type": "text/html"});
+      res.writeHead(200, {"Content-Type": "text/html"});
       res.write(data);
       return res.end();
     }
