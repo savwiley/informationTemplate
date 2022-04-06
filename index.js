@@ -13,7 +13,7 @@ http.createServer(function(req, res) {
         console.warn(err);
       } else {
         res.writeHead(200, {"Content-Type": "text/css"});
-        res.end(data);
+        return res.end(data);
       }
     });
   };
