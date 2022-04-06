@@ -18,3 +18,12 @@ const server = http.createServer((req, res) => {
     }
   })
 }).listen("8080");
+
+
+/**
+ * ERROR
+ * node: _http_outgoing:722
+ * https://stackoverflow.com/questions/59148769/post-using-request-promise-module-in-node-js-and-getting-http-outgoing-js618-th
+ * 
+ * TypeError [ERR_INVALID_ARG_TYPE]: The "chunk" argument must be of type string or an instance of Buffer or Uint8Array. Received undefined
+ */
