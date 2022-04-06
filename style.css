@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
+
 body {
-  background: green;
+  background: url("https://www.transparenttextures.com/patterns/foggy-birds.png"), linear-gradient(50deg, #ff6881, #e248c8) no-repeat fixed;
+  text-align: center;
+  padding-top: 100px;
+}
+
+h1 {
+  font-family: 'Bungee Inline', cursive;
+  text-shadow: -1px 1px 0 #000, 
+               -2px 2px 0 #000, 
+               -3px 3px 0 #000, 
+               -4px 4px 0 #000, 
+               -5px 5px 0 #000, 
+               -6px 6px 0 #000;
+  font-size: 5rem;
+  color: #fff;
+  font-weight: normal;
 }
